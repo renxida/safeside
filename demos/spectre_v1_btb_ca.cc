@@ -36,9 +36,9 @@
 #include "cache_sidechannel.h"
 #include "instr.h"
 #include "utils.h"
-
-const char *public_data = "xxxxxxxxxxxxxxxx";
-const char *private_data = "It's a s3kr3t!!!";
+#include "local_content.h"
+// const char *public_data = "xxxxxxxxxxxxxxxx";
+// const char *private_data = "It's a s3kr3t!!!";
 
 // Empirically tested to have a good performance. 2048 is slower, but increasing
 // the number further does not help.
