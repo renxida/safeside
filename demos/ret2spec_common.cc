@@ -93,9 +93,9 @@ char Ret2specLeakByte() {
       return result.second;
     }
 
-    if (run > 100000) {
-      std::cerr << "Does not converge " << result.second << std::endl;
-      exit(EXIT_FAILURE);
+    if (run > 1000) {
+      std::cerr << "Does not converge on offset" << offset << "; best guess: " << result.second << std::endl;
+      break;
     }
   }
 }
