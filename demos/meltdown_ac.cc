@@ -111,7 +111,7 @@ static char LeakByte(uintptr_t *unaligned_data, size_t offset) {
     }
 
     if (run > 1000) {
-      std::cerr << "Does not converge on offset" << offset << "; best guess: " << result.second << std::endl;
+      std::cerr << "Does not converge; best guess: " << result.second << std::endl;
       break;
     }
   }
