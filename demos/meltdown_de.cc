@@ -89,12 +89,13 @@ static char LeakByte(size_t offset) {
         sidechannel.RecomputeScores(public_data[safe_offset]);
 
     if (result.first) {
-      return result.second;
+     //  return result.second;
     }
 
     if (run > 1000) {
-      std::cerr << "Does not converge; best guess: " << result.second << std::endl;
-      break;
+      // std::cerr << "Does not converge; best guess: " << result.second << std::endl;
+      // break;
+      return result.second;
     }
   }
 }
