@@ -1,13 +1,13 @@
 #/usr/bin/env bash
-function runone{
-	files=`ls build/demos/*`
-	interval_print=$1
-	outdir=$2
+function runone {
+	local files=$(ls build/demos/*)
+	local interval_print=$1
+	local outdir=$2
 	for file in $files:
 	do
 	    if [ -f "${file}" ] && [ -r "${file}" ] && [ -x "${file}" ]; then
 		echo running $file
-		benchname=$(basename $file)
+		local benchname=$(basename $file)
 		mkdir -p $outdir/$benchname
 		timeout 7200 perf stat -x, -a --append -o $outdir/$benchname/perf-output.csv --delay 3000 --interval-print $interval_print  -e r0CA3,r0283,r0480,r01C5 $file
 		echo donewith  $file
@@ -18,7 +18,7 @@ function runone{
 }
 
 
-outdir=$HOME/safeside-out/
+outdir=$HOME/safeside-out-4pfc/
 for interval in 1 4 16 64 256 1024 4096 16384
 do
 	echo $interval
