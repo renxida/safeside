@@ -1,3 +1,7 @@
+rm -rf build
+cmake -B build .
+make -C build
+
 #/usr/bin/env bash
 function runone {
 	local files=$(ls build/demos/*)
